@@ -1,0 +1,18 @@
+import pandas as pd
+polls = pd.read_csv('data/senate_polls.csv')
+#print(polls)
+#print (polls.dtypes)
+#print(polls.columns)
+#print(polls["Unnamed: 9"])
+#print(polls.count())
+#print(polls[["Day","Len","Date","Pollster"]])
+#print(polls.iloc[2:4,:])
+#Series=polls.duplicated()
+#print(Series)
+#sum = Series.sum()
+#print(sum )
+#print( polls.iloc[2] != polls.iloc[3])
+#print(polls["EV"].duplicated().sum())
+df=polls[["Day","Len","State","Dem","GOP","Ind","Date","Pollster"]]
+#print(df)
+print(df[df["Ind"].notna()])
