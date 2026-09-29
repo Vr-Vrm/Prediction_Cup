@@ -1,12 +1,14 @@
-## proly should not do this but api key for `practise 1` - ace_ff6b6f164788f7c7e39eb2f6eb658ae91d40a61b
-
+import os
+from dotenv import load_dotenv
 import requests
 
+load_dotenv()
+API_KEY=os.getenv("API_KEY")
 
 
 response = requests.get("https://www.thesuper.market/api/v1/markets",
                         headers={
-                            "Authorization":"Bearer ace_ff6b6f164788f7c7e39eb2f6eb658ae91d40a61b" 
+                            "Authorization": f"Bearer {API_KEY}"
                         },
                         params={
                             "limit": "1",
